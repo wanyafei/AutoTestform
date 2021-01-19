@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load static %}
+{% block crumbs %}
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/index">主页</a>
+                </li>
+                <li class="active">
+                    <a class="this-page">接口测试</a>
+                </li>
+                <li class="active">
+                    <a class="this-page">测试计划管理</a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <input type="text" id="sear_plan_name" style="border:2px solid #337ab7;width:30%;height:30px;" name="testcase_name" placeholder="计划名称">
+                    <input type="button" id="sear" class="btn btn-primary" name="search" value="搜索" onclick="search(this)">
+                    <script type="text/javascript" src="{% static 'scripts/jquery-1.12.4.min.js' %}"></script>
+                    <a href="{% url 'apitest:add_plant' %}" style="position: absolute;right:30px;top:20px" class="btn btn-primary">添加计划</a>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>计划名称</th>
+                            <th>所属项目</th>
+                            <th>所属环境</th>
+                            <th>包含用例</th>
+                            <th>描述</th>
+                            <th>操作</th>
+                            <th>报告</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for plan in plan_objs %}
+                         <tr>
+                                <td>{{ plan.plant_id }}</td>
+                                <td>{{ plan.plant_name }}</td>
+                                <td>{{ plan.project }}</td>
+                                <td>{{ plan.env }}</td>
+                                <td>{{ plan.content }}</td>
+                                <td>{{ plan.description }}</td>
+                            <td>
+                            <button class="btn btn-primary" onclick="run_button(this);">执行计划</button>
+                            <a href="{% url 'apitest:update_plant' %}?plan_id={{ plan.pk }}" class="layui-btn layui-btn-xs"
+                               lay-event="edit">编辑</a>
+                            <a href="{% url 'apitest:delete_plant' %}?plan_id={{ plan.pk }}"
+                               class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" href="{% url 'apitest:query_report' %}?plan_id={{plan.pk}}"><i class="fa fa-edit"></i>&nbsp;查看报告</a>
+                            </td>
+                    </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination pagination-sm">
+                    {% if page_num_obj.has_previous %}
+                        <li><a href="{% url 'apitest:get_plant' page_num_obj.previous_page_number %}" aria-label="Previous">
+                            <span aria-hidden="true">上一页</span></a></li>
+                {% else %}
+                <li class="disabled"><a aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+                    {% endif %}
+                    {% for num in page_range %}
+                        {% if num == active_num %}
+                        <li class="active"><a href="">{{ num }}</a></li>
+                        {% else %}
+                        <li><a href="{% url 'apitest:get_plant' num %}">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page_num_obj.has_next  %}
+                    <li><a href="{% url 'apitest:get_plant' page_num_obj.next_page_number %}" aria-label="Next">
+                        <span aria-hidden="true">下一页</span></a></li>
+                      {% else %}
+                      <li class="disabled"><a aria-label="Next"><span aria-hidden="true">下一页</span></a></li>
+                    {% endif %}
+                    </ul>
+                </nav>
+			</div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascript %}
+    <script>
+        function search(obj){
+            var plan_name=$("#sear_plan_name").val();
+            if(plan_name==""){
+                location.href='{% url 'apitest:get_plant' 1 %}'
+            }else{
+                location.href='{% url 'apitest:search_plan' %}?plan_name='+plan_name
+            }
+        };
+        function run_button(obj){
+            alert("开始运行,点击确定按钮后查看结果....")
+            var plan_id=obj.parentNode.parentNode.children[0].innerText;
+            var plan_name=obj.parentNode.parentNode.children[1].innerText;
+            $.ajax({
+                type:"post",
+                url:"/apitest/run_plan",
+                data:{
+                    "plan_id":plan_id
+                },
+                success:function(result){
+                    alert(result)
+                },
+                error(){
+                    alert(plan_name+"执行失败")
+                }
+            });
+
+        }
+    </script>
+{% endblock %}
+
+

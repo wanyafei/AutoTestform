@@ -1,0 +1,366 @@
+{% extends "base.html" %}
+{% load static %}
+{% block crumbs %}
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/index">主页</a>
+                </li>
+                <li class="active">
+                    <a class="this-page">定时管理</a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <input type="text" id="task_name" style="border:2px solid #337ab7;width:30%;height:30px;" name="testcase_name" placeholder="定时任务名称">
+                    <input type="button" id="sear" class="btn btn-primary" name="search" value="搜索" onclick="search()">
+{#                    <script type="text/javascript" src="{% static 'scripts/jquery-1.12.4.min.js' %}"></script>#}
+                    <a href="{% url 'taste_user:add_task' %}" style="position: absolute;right:30px;top:20px" class="btn btn-primary">添加定时任务</a>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>定时任务名称</th>
+                            <th>所属项目</th>
+                            <th>最近一次执行时间</th>
+{#                            <th>负责人</th>#}
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for taste in obj_lists %}
+                         <tr class="btnstatus">
+                                <td>{{ taste.taste_name }}</td>
+                                <td>{{ taste.project.prj_name }}</td>
+                                <td>{{ taste.taste_time }}</td>
+{#                                <td>{{ taste.user.account }}</td>#}
+                                {% if taste.status == 0 or taste.status == 2%}
+                                    <td>STOP</td>
+                                {% elif taste.status == 1 or taste.status == 3%}
+                                    <td>RUNNING</td>
+                                {% endif %}
+                            <td>
+{#                            <button class="btn btn-primary" onclick="run_button(this);">执行计划</button>#}
+{#                            <a href="{% url 'apitest:update_plant' %}?plan_id={{ plan.pk }}" class="layui-btn layui-btn-xs"#}
+{#                               lay-event="edit">编辑</a>#}
+{#                            <a href="{% url 'apitest:delete_plant' %}?plan_id={{ plan.pk }}"#}
+{#                               class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>#}
+                                <!-- Split button -->
+                                <div class="btn-group">
+                                      <button type="button" class="btn btn-primary">操作</button>
+                                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                      </button>
+                                      <ul class="dropdown-menu">
+                                            <li><a flag="run_once" id="run_once" title="{{ taste.taste_id }}" name="{{ taste.project.prj_id }}" data-toggle="modal" data-target="#runonece" onclick="get_user(this)">执行一次</a></li>
+                                          {% if taste.status == 0%}
+                                            <li><a flag="run" id="run" title="{{ taste.taste_id }}" name="{{ taste.project.prj_id }}" data-toggle="modal" data-target="#runtiming" value="1" onclick="get_user(this)">启动</a></li>
+                                          {% elif taste.status == 1 %}
+                                            <li><a flag="run" id="run1" title="{{ taste.taste_id }}" name="{{ taste.project.prj_id }}" value="2" onclick="editfun(this)">暂停</a></li>
+                                          {% elif taste.status == 2 %}
+                                            <li><a flag="run" id="run2" title="{{ taste.taste_id }}" name="{{ taste.project.prj_id }}" value="3" onclick="editfun(this)">重启</a></li>
+                                          {% elif taste.status == 3 %}
+                                            <li><a flag="run" id="run3" title="{{ taste.taste_id }}" name="{{ taste.project.prj_id }}" value="4" onclick="editfun(this)">暂停</a></li>
+                                          {% endif %}
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="{% url 'taste_user:edit_task' taste.taste_id %}">编辑</a></li>
+                                        <li><a pk="{{ taste.taste_id }}"  onclick="delbtn(this)">删除</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a id="{{ taste.taste_id }}" data-toggle="modal" data-target=".bs-example-modal-sm" onclick="get_next_time(this)" >下次执行时间</a></li>
+                                      </ul>
+                                </div>
+                            </td>
+
+                    </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+{#                下次执行时间模态框#}
+                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">下次运行时间</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="data_alert"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+{#                执行一次的模态框#}
+                <div class="modal fade" id="runonece" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                            <h4 class="modal-title">任务运行</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-horizontal" method="post" action="">
+                                <div class="form-group">
+                                    <input type="hidden" id="debug_case_id" name="case_id">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">邮件接收人</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control m-b" id="runonce_user_id" name="user_name">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="cancel_run" class="btn btn-default" data-dismiss="modal">
+                                        取消
+                                    </button>
+                                    <button pk="run_once" type="button" onclick="runfun(this)" class="btn btn-primary">确定
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+{#                定时任务的模态框#}
+                <div class="modal fade" id="runtiming" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                            <h4 class="modal-title">任务运行</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-horizontal" method="post" action="">
+                                <div class="form-group">
+                                    <input type="hidden" id="debug_case_id" name="case_id">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">邮件接收人</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control m-b" id="run_user_id" name="user_name">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="cancel_run" class="btn btn-default" data-dismiss="modal">
+                                        取消
+                                    </button>
+                                    <button pk="runtiming" type="button" onclick="runfun(this)" class="btn btn-primary">确定
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+    <div class="panel-footer">
+    <nav aria-label="Page navigation">
+			<ul class="pagination pagination-sm">
+			{% if page_obj.has_previous %}   {# 判断当前页是否有上一页#}
+				<li><a href="{% url 'taste_user:search_task' page_obj.previous_page_number %}" aria-label="Previous">
+					<span aria-hidden="true">上一页</span></a></li>
+            {% else %}
+                <li class="disabled"><a aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+            {% endif %}
+            {% for num in page_range%}   {# 循环遍历页码列表，并展示到底部 #}
+            	{%if active_number == num%}
+                	<li class="active"><a href="">{{ num }}</a></li>
+                {%else%}
+                    <li><a href="{% url 'taste_user:search_task' num %}">{{ num }}</a></li>
+                {%endif%}
+             {% endfor %}
+             {% if page_obj.has_next %}  {# 判断当前页是否有下一页#}
+                 <li><a href="{% url 'taste_user:search_task' page_obj.next_page_number %}" aria-label="Next">
+                      <span aria-hidden="true">下一页</span></a></li>
+             {% else %}
+                 <li class="disabled"><a aria-label="Next"><span aria-hidden="true">下一页</span></a></li>
+              {% endif %}
+       		</ul>
+    </nav>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        //获取项目对应的用户
+        function get_user(obj){
+            $("#runonce_user_id").empty();
+            $("#run_user_id").empty();
+            var prj_id=$(obj).attr("name");
+            if(prj_id==null){
+                alert("请先选择项目");
+            }else{
+                $.ajax({
+                    type:"get",
+                    url:"/apitest/find_prj_if",
+                    data:{
+                        "prj_id":prj_id,
+                        "type":"get_user_by_prj_id"
+                    },
+                    success:function (result){
+                        if ($(obj).attr("flag")=="run_once"){
+                        $(result).each(function (i,item){
+                            $("#runonce_user_id").append("<option value="+item.user_id+">"+item.username+"</option>")
+                        })
+                        }else{
+                         $(result).each(function (i,item){
+                            $("#run_user_id").append("<option value="+item.user_id+">"+item.username+"</option>")
+                        })
+                        }
+                    },
+                    error:function (){
+                        alert("获取项目下的负责人失败！！！")
+                    }
+                })
+            }
+        }
+        //获取下次运行时间
+        function get_next_time(obj){
+            var task_id=$(obj).attr("id")
+            $.ajax({
+                type:"get",
+                url:"/taste_user/get_next_runtime",
+                data:{
+                    "task_id":task_id
+                    },
+                success:function (data) {
+                    $("#data_alert").html(data.result)
+                },
+                error:function (){
+                    alert("获取下次运行时间失败");
+                }
+            });
+
+        }
+        //搜索接口ajax
+        function search(){
+            var task_name=$("#task_name").val();
+            if(task_name==""){
+                location.href='{% url 'taste_user:search_task' 1 %}'
+            }else{
+                location.href='{% url 'taste_user:search_task_name' %}?task_name='+task_name
+            }
+        }
+
+        //删除操纵ajax
+        function delbtn(obj){
+            var pk=$(obj).attr('pk')
+            var ele=$(obj).parents(".btnstatus")
+            //发送删除请求
+            $.ajax({
+                url:"/taste_user/delete_task?task_id="+pk,
+                type:"get",
+                success:function (result){
+                    if(result.code == 0){
+                        ele.remove()
+                    }else{
+                        alert("删除失败")
+                    }
+                },
+                error:function (){
+                    alert("删除失败")
+                }
+            })
+        }
+        //暂停、重启ajax
+        function editfun(obj){
+             $.ajax({
+                    type:"post",
+                    url:'/taste_user/run',
+                    data:{
+                        "user":$("#run_user_id").val(),
+                        "task_id":$(obj).attr("title"),
+                        "flag":$(obj).attr("value")
+                    },
+                    success:function (result){
+                        if (result.code == 1){
+                             alert("提示:已完成任务启动！！！")
+
+                        }else if(result.code == 2){
+                            alert("提示:已完成任务暂停！！！")
+
+                        }else if(result.code == 3){
+                            alert("提示:已完成任务重启！！！")
+
+                        }
+                        window.location.replace("/taste_user/search_task/1")
+                    },
+                    error:function(){
+                        alert("提示:更改运行状态失败！！！")
+                    }
+                })
+
+        }
+
+        //执行一次和运行定时的ajax
+        function runfun(obj){
+            var pk=$(obj).attr("pk")
+            if (pk == "runtiming"){
+                $.ajax({
+                    type:"post",
+                    url:'/taste_user/run',
+                    data:{
+                        "user":$("#run_user_id").val(),
+                        "task_id":$("#run").attr("title"),
+                        "flag":$("#run").attr("value")
+                    },
+                    success:function (result){
+                        if (result.code == 1){
+                             alert("提示:已完成任务启动！！！")
+
+                        }else if(result.code == 2){
+                            alert("提示:已完成任务暂停！！！")
+
+                        }else if(result.code == 3){
+                            alert("提示:已完成任务重启！！！")
+
+                        }
+                        window.location.replace("/taste_user/search_task/1")
+                    },
+                    error:function(){
+                        alert("提示:更改运行状态失败！！！")
+                    }
+                })
+            }else if (pk == "run_once"){
+                $.ajax({
+                type:"post",
+                url:'/taste_user/run_once',
+                data:{
+                    "user":$("#runonce_user_id").val(),
+                    "task_id":$("#run_once").attr("title")
+                },
+                success:function (result){
+                    alert("提示:"+result.message);
+
+                },
+                error:function (result){
+                    alert("提示:"+result.message)
+                }
+            })
+            }
+
+        }
+
+    </script>
+{% endblock %}

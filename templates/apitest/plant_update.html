@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% load static %}
+{% block crumbs %}
+<div class="row">
+    <div class="col-md-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/index">主页</a>
+            </li>
+            <li class="active">
+                <a class="this-page">接口测试</a>
+            </li>
+            <li class="active">
+                <a class="this-page" href="{% url 'apitest:get_plant' 1 %}">测试计划管理</a>
+            </li>
+            <li class="active">
+                <a class="">编辑测试计划</a>
+            </li>
+        </ol>
+    </div>
+</div>
+{% endblock %}
+{% block body %}
+    <div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">编辑计划</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">计划名称</label>
+                        <div class="col-sm-6">
+                            <input type="text" id="plan_name"  name="{{ update_obj.plant_id }}" class="form-control" value="{{ update_obj.plant_name }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">选择项目</label>
+                        <div class="col-sm-6">
+                            <select class="form-control m-b" id="prj_id" name="prj_id" onchange=get_env()>
+                                {% for pro in pro_objs %}
+                                    {% if pro.prj_id == update_obj.project.prj_id %}
+                                        <option selected value="{{ pro.prj_id }}">{{ pro.prj_name }}</option>
+                                    {% else %}
+                                        <option value="{{ pro.prj_id }}">{{ pro.prj_name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">选择环境</label>
+                        <div class="col-sm-6"><select class="form-control m-b" id="env_id" name="env_id">
+                            <option selected value="{{ update_obj.env.env_id }}">{{ update_obj.env.env_name }}</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">描述</label>
+                        <div class="col-sm-6">
+                            <textarea id="description" name="description" placeholder="请输入内容" class="form-control" rows="3">{{ update_obj.description }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">用例列表</label>
+                        <a id="getcases" onclick="get_cases()" class="btn btn-primary">获取用例</a>
+                        <div id="list" class="col-sm-10 col-sm-offset-2">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-6">
+                            <button id="submit" class="btn btn-primary">保存</button>
+                            <button type="reset" class="btn btn-primary">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+{% block javascript %}
+    <script type="application/javascript">
+        function get_env(){
+            $("#env_id").empty();
+            var prj_id = $("#prj_id").val();
+            if (prj_id==null){
+                alert("请先选择项目");
+            }else{
+                $.ajax({
+                    type:"get",
+                    url:"/apitest/find_prj_if",
+                    data:{
+                        "prj_id":prj_id,
+                        "type":"get_env_by_prj_id"
+                    },
+                    success:function (data){
+                        $(data).each(function (i,item){
+                            $("#env_id").append("<option value="+item.env_id+">"+item.env_name+"</option>")
+                        })
+                    },
+                    error:function (){
+                        alert("获取环境失败！！！")
+                    }
+                });
+            }
+
+        }
+    function get_cases(){
+            $("#list").empty();
+            var prj_id=$("#prj_id").val();
+            if(prj_id==null){
+                alert("请先选择项目");
+            }else{
+                $.ajax({
+                    type:"get",
+                    url: "/apitest/find_prj_if",
+                    data: {
+                        "prj_id":prj_id,
+                        "type":"get_tc_by_prj_id"
+                    },
+                    success:function (data){
+                        var listdata=eval(data)
+                        $(listdata).each(function (i,item){
+                            $("#list").append("<label class='checkbox-inline'><input type='checkbox' id='case_id' name='case_id' value="+ item.case_id +">"+ item.case_name +"</label>")
+                        })
+                    },
+                    error:function(){
+                        alert("获取项目下用例失败！！！")
+                    }
+                });
+            }
+    };
+        //更新操作
+    $("#submit").click(function (){
+       var checkeds = [];
+       $('input:checkbox:checked').each(function (){
+            checkeds.push($(this).val());
+       });
+       var plan_obj_id=$("#plan_name").attr('name');
+       var plan_name =$("#plan_name").val();//计划名称
+       var prj_id=$("#prj_id").val();//项目
+       var env_id=$("#env_id").val();//环境
+       var description=$("#description").val();//描述
+        console.log(checkeds);
+        console.log(typeof checkeds)
+       $.ajax({
+           url:"/apitest/update_plant?plan_id="+plan_obj_id,
+           type:"post",
+           data:{
+               "plan_name":plan_name,
+               "prj_id":prj_id,
+               "env_id":env_id,
+               "description":description,
+               "case_id":JSON.stringify(checkeds)
+           },
+           success:function (result){
+                if (result.code == 0){
+                    alert(result.msg);
+                }else if(result.code == 1){
+                    alert(result.msg);
+                    window.location.replace("/apitest/get_plant/1");
+                }else{
+                    alert(result.msg);
+                }
+           },
+           error:function (){
+               alert("编辑测试计划失败！！！")
+           },
+
+       });
+        })
+    </script>
+{% endblock %}

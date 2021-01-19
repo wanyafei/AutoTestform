@@ -1,0 +1,59 @@
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <script src="jquery-1.10.1.min.js">
+    </script>
+
+</head>
+   <body>
+      <table >
+         <tr>
+            <td>
+            <div id="leavediv" style="border:solid;width:150px;height:200px">
+                <input type="checkbox" autocomplete="off" value="0001" name="selected"/><span>张三</span><br/>
+                <input type="checkbox" autocomplete="off" value="0002" name="selected"/><span>李四</span><br/>
+                <input type="checkbox" autocomplete="off" value="0003" name="selected"/><span>王二</span><br/>
+                <input type="checkbox" autocomplete="off" value="0004" name="selected"/><span>周五</span><br/>
+            </div>
+            </td>
+            <td>
+            <input id="add" type="button" value="添加>"><br/>
+            <input id="del" type="button" value="<删除">
+            </td>
+            <td>
+            <div id="gaineddiv" style="border:solid;width:150px;height:200px">
+            </div>
+            </td>
+         </tr>
+      </table>
+      </div>
+      <div>
+      </div>
+   </body>
+<script>
+   $(document).ready(function(){
+    //点击【添加】触发该函数
+     $("#add").click(function(){
+          var obj=$("input[type=checkbox][name=selected]:checked");  //获取左侧选中的复选框对象,得到对象数组
+         $.each(obj,function (i){                                    //循环遍历每一个选中对象
+              $("#gaineddiv").append("<input type='checkbox' value='"+obj[i].value+"' name='gained'/><span>"+$(obj[i]).next().html()+"</span><br/>");//在ID元素为gaineddiv元素后插入循环对象，将左侧复选框选中的对象添加到右侧表格中。
+              $(obj[i]).next().next().remove();                      //删除循环对象在左侧表格中的br元素
+              $(obj[i]).next().remove();                             //删除循环对象在左侧表格中的span元素
+              $(obj[i]).remove();                                    //删除循环对象在左侧表格中的input元素
+         })
+     })
+       //点击【删除】按钮触发该函数
+     $("#del").click(function(){
+          var obj=$("input[type=checkbox][name=gained]:checked");   //获取右侧选中的复选框对象,得到对象数组
+
+         $.each(obj,function (i) {                                  //循环遍历每一个选中对象
+             $("#leavediv").append("<input type='checkbox' value='" + obj[i].value + "' name='leaved'/><span>" + $(obj[i]).next().html() + "</span><br/>");//在ID元素为leavediv元素后插入循环对象，将右侧复选框选中的对象添加到左侧表格中。
+             $(obj[i]).next().next().remove();                     //删除循环对象在右侧表格中的br元素
+             $(obj[i]).next().remove();                            //删除循环对象在右侧表格中的span元素
+             $(obj[i]).remove();                                   //删除循环对象在右侧表格中的input元素
+
+         })
+    })
+     })
+</script>
+</html>

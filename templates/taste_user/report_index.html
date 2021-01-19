@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <input type="text" id="report_name" style="border:2px solid #337ab7;width:30%;height:30px;" name="report_name" placeholder="报告名称">
+                    <input type="text" id="task_name" style="border:2px solid #337ab7;width:30%;height:30px;" placeholder="任务名称">
+                    <input type="button" id="sear" class="btn btn-primary" name="search" value="搜索" onclick="search()">
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>报告名称</th>
+                            <th>日期</th>
+                            <th>案例数</th>
+                            <th>通过数</th>
+                            <th>失败数</th>
+                            <th>错误数</th>
+                            <th>任务名称</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for report in user_list %}
+                         <tr class="btnstatus">
+                                <td>{{ report.report_name }}</td>
+                                <td>{{ report.time }}</td>
+                                <td>{{ report.case_num }}</td>
+                                <td>{{ report.pass_num }}</td>
+                                <td>{{ report.fail_num }}</td>
+                                <td>{{ report.error_num }}</td>
+                                <td>{{ report.task }}</td>
+                                 <td>
+                                     <a href="{% url 'apitest:query_report' %}?report_id={{ report.report_id }}" class="layui-btn layui-btn-xs"
+                                           lay-event="edit">查看详情</a>
+                                 </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+    <div class="panel-footer">
+    <nav aria-label="Page navigation">
+			<ul class="pagination pagination-sm">
+{#			{% if page_info.has_previous %}   {# 判断当前页是否有上一页#}
+{#				<li><a href="{% url 'taste_user:search_report' page_info.previous_page_number %}" aria-label="Previous">#}
+{#					<span aria-hidden="true">上一页</span></a></li>#}
+{#            {% else %}#}
+{#                <li class="disabled"><a aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>#}
+{#            {% endif %}#}
+{#            {% for num in page_range%}   {# 循环遍历页码列表，并展示到底部 #}
+{#            	{%if page_info.number == num%}#}
+{#                	<li class="active"><a href="">{{ num }}</a></li>#}
+{#                {%else%}#}
+{#                    <li><a href="{% url 'taste_user:search_report' num %}">{{ num }}</a></li>#}
+{#                {%endif%}#}
+{#             {% endfor %}#}
+{#             {% if page_info.has_next %}  {# 判断当前页是否有下一页#}
+{#                 <li><a href="{% url 'taste_user:search_report' page_info.next_page_number %}" aria-label="Next">#}
+{#                      <span aria-hidden="true">下一页</span></a></li>#}
+{#             {% else %}#}
+{#                 <li class="disabled"><a aria-label="Next"><span aria-hidden="true">下一页</span></a></li>#}
+{#              {% endif %}#}
+                {{ page_info.pager|safe }}
+       		</ul>
+    </nav>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script>
+        //搜索接口ajax
+        function search(){
+            var task_name=$("#task_name").val();
+            var report_name=$("#report_name").val();
+            if(task_name==""&&report_name==""){
+                location.href='{% url 'taste_user:search_report' 1 %}'
+            }else{
+                location.href='{% url 'taste_user:search_report_task' %}?task_name='+task_name+'&report_name='+report_name
+            }
+        }
+
+    </script>
+{% endblock %}
+
+

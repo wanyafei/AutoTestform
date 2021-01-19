@@ -1,0 +1,9 @@
+.tpl-content-wrapper{
+    padding-left: 0;
+}
+.dashboard-stat{
+    display: inline-block;
+    width: 20%;
+    margin: 1px 1% 40px;
+    position: relative;
+}

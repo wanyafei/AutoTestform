@@ -1,0 +1,422 @@
+{% extends "base.html" %}
+{% load static %}
+{% block crumbs %}
+<div class="row">
+    <div class="col-md-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/index">主页</a>
+            </li>
+            <li class="active">
+                <a class="this-page">接口测试</a>
+            </li>
+            <li class="active">
+                <a class="this-page" href="{% url 'apitest:get_interviews' 1 %}">接口管理</a>
+            </li>
+            <li class="active">
+                <a class="">编辑接口</a>
+            </li>
+        </ol>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">编辑接口</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">接口名称</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="if_name" name={{ if_obj.if_id }} class="form-control" value={{ if_obj.if_name }}>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">所属项目</label>
+                        <div class="col-sm-8">
+                            <select type="text" id="prj_id" class="form-control">
+                                {% for prj in prjs %}
+                                    {% if prj.prj_id == if_obj.project.prj_id %}
+                                    <option selected value={{ prj.prj_id }}>{{ prj.prj_name }}</option>
+                                    {% else %}
+                                    <option value={{ prj.prj_id }}>{{ prj.prj_name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">api地址</label>
+                        <div class="col-sm-8">
+                            <input type="text" id="url" name="url" class="form-control" value={{ if_obj.if_url }}>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">请求方式</label>
+                        {% if if_obj.method == "get" %}
+                        <div class="col-sm-1 control-label">
+                            <label class="fancy-radio">
+                                <input name="method" value="get" type="radio" checked="checked" ><span><i></i>get</span>
+                            </label>
+                        </div>
+                        <div class="col-sm-2 control-label">
+                            <label class="fancy-radio">
+                                <input name="method" value="post" type="radio" ><span><i></i>post</span>
+                            </label>
+                        </div>
+                        {% else %}
+                        <div class="col-sm-1 control-label">
+                            <label class="fancy-radio">
+                                <input name="method" value="get" type="radio" ><span><i></i>get</span>
+                            </label>
+                        </div>
+                        <div class="col-sm-2 control-label">
+                            <label class="fancy-radio">
+                                <input name="method" value="post" type="radio" checked="checked"><span><i></i>post</span>
+                            </label>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">数据传输方式</label>
+                        <div class="col-sm-8">
+                            <select type="text" id="data_type" class="form-control">
+                                {% if if_obj.data_type == "json"%}
+                                <option value='json' selected>json</option>
+                                <option value='data'>data</option>
+                                {% else %}
+                                <option value='json'>json</option>
+                                <option value='data' selected>data</option>
+                                {% endif %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">接口描述</label>
+                        <div class="col-sm-8">
+                            <textarea name="description" placeholder="请输入内容" class="form-control" rows="3" >{{ if_obj.description }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">请求header</label>
+                        <div class="col-sm-8">
+                            <button id="add_request_header" class="btn btn-primary" type="button"><i
+                                    class="fa fa-plus-square-o"></i>&nbsp;添加行
+                            </button>
+                        </div>
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <table id="request_header" class="table col-sm-10" id="request_header_table">
+                                <thead>
+                                <tr>
+                                    <th>参数名</th>
+                                    <th>值</th>
+                                    <th></th>
+                                </tr>
+
+                                {% if qingqoutou_lists %}
+                                    {% if qingqiutou_flag >= 2 %}
+                                        {% for i in qingqoutou_lists %}
+                                            <tr>
+                                                <td name='var_name' contenteditable='true' >{{ i.var_name }}</td>
+                                                <td name='var_remark' contenteditable='true'>{{ i.var_remark }}</td>
+                                                <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td>
+                                            </tr>
+                                        {% endfor %}
+
+                                    {% else %}
+                                        <tr>
+                                            <td name='var_name' contenteditable='true' >{{ qingqoutou_lists.var_name }}</td>
+                                            <td name='var_remark' contenteditable='true'>{{ qingqoutou_lists.var_remark }}</td>
+                                            <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td>
+                                        </tr>
+                                    {% endif %}
+                                {% endif %}
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">请求body</label>
+                        <div class="col-sm-8">
+                            <button id="add_request_body" class="btn btn-primary" type="button"><i
+                                    class="fa fa-plus-square-o"></i>&nbsp;添加行
+                            </button>
+                        </div>
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <table id="request_body" class="table col-sm-10">
+                                <thead>
+                                <tr>
+                                    <th>参数名</th>
+                                    <th>值</th>
+                                    <th></th>
+                                </tr>
+                                    {% if qingqouti_lists %}
+                                        {% if qingqiuti_flag >= 2 %}
+                                            {% for ii in qingqouti_lists %}
+                                                <tr>
+                                                  <td name='var_name' contenteditable='true'>{{ ii.var_name }}</td>
+                                                  <td name='var_remark' contenteditable='true'>{{ ii.var_remark}}</td>
+                                                  <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                  <td name='var_name' contenteditable='true'>{{ qingqouti_lists.var_name }}</td>
+                                                  <td name='var_remark' contenteditable='true'>{{ qingqouti_lists.var_remark}}</td>
+                                                  <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td>
+                                                </tr>
+                                        {% endif %}
+                                    {% endif %}
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">返回header</label>
+                        <div class="col-sm-8">
+                            <button id="add_response_header" class="btn btn-outline btn-primary" type="button"><i
+                                    class="fa fa-plus-square-o"></i>&nbsp;添加行
+                            </button>
+                        </div>
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <table id="response_header" class="table col-sm-10">
+                                <thead>
+                                <tr>
+                                    <th>参数名</th>
+                                    <th>值</th>
+                                    <th></th>
+                                </tr>
+                                {% if xiangyingtou_lists %}
+                                        {% if xiangyingtou_flag >= 2%}
+                                            {% for iii in xiangyingtou_lists %}
+                                                <tr>
+                                                <td name='var_name' contenteditable='true'>{{ iii.var_name }}</td>
+                                                <td name='var_remark' contenteditable='true'>{{ iii.var_remark}}</td>
+                                                <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% else %}
+                                            <tr>
+                                                <td name='var_name' contenteditable='true'>{{ xiangyingtou_lists.var_name }}</td>
+                                                <td name='var_remark' contenteditable='true'>{{ xiangyingtou_lists.var_remark}}</td>
+                                                <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td>
+                                                </tr>
+                                        {% endif %}
+                                    {% endif %}
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">返回body</label>
+                        <div class="col-sm-8">
+                            <button id="add_response_body" class="btn btn-outline btn-primary" type="button"><i
+                                    class="fa fa-plus-square-o"></i>&nbsp;添加行
+                            </button>
+                        </div>
+                        <div class="col-sm-offset-2 col-sm-8">
+                            <table id="response_body" class="table col-sm-10">
+                                <thead>
+                                <tr>
+                                    <th>参数名</th>
+                                    <th>值</th>
+                                    <th></th>
+                                </tr>
+                                {% if xiangyingti_lists %}
+                                    {% if xiangyingti_flag >= 2%}
+                                            {% for iiii in xiangyingti_lists %}
+                                                <tr>
+                                                <td name='var_name' contenteditable='true'>{{ iiii.var_name }}</td>
+                                                <td name='var_remark' contenteditable='true'>{{ iiii.var_remark}}</td>
+                                                <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td>
+                                                </tr>
+                                            {% endfor %}
+                                    {% else %}
+                                        <tr>
+                                            <td name='var_name' contenteditable='true'>{{ xiangyingti_lists.var_name }}</td>
+                                            <td name='var_remark' contenteditable='true'>{{ xiangyingti_lists.var_remark}}</td>
+                                            <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td>
+                                        </tr>
+                                    {% endif %}
+                                    {% endif %}
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-6">
+                            <button id="sumbit" class="btn btn-primary">保存</button>
+                            <button type="reset" class="btn btn-primary">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block javascript %}
+<script>
+    //删除行函数
+    function del_step(obj) {
+        var tr = obj.parentNode.parentNode;
+        var tbody = tr.parentNode;
+        tbody.removeChild(tr);
+    }
+
+    $(document).ready(function () {
+        //添加请求头参数行
+        $("#add_request_header").click(function () {
+            var newRow = "<tr> <td name='var_name' contenteditable='true'></td><td name='var_remark' contenteditable='true'></td> <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td> </tr>";
+            $("#request_header tr:last").after(newRow);
+        });
+
+        $("#add_request_body").click(function () {
+            var newRow = "<tr> <td name='var_name' contenteditable='true'></td><td name='var_remark' contenteditable='true'></td> <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td> </tr>";
+            $("#request_body tr:last").after(newRow);
+        });
+
+        $("#add_response_header").click(function () {
+            var newRow = "<tr> <td name='var_name' contenteditable='true'></td><td name='var_remark' contenteditable='true'></td> <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td> </tr>";
+            $("#response_header tr:last").after(newRow);
+        });
+
+        $("#add_response_body").click(function () {
+            var newRow = "<tr> <td name='var_name' contenteditable='true'></td><td name='var_remark' contenteditable='true'></td> <td> <button class='btn btn-danger' onclick='del_step(this)'>删除行</button> </td> </tr>";
+            $("#response_body tr:last").after(newRow);
+        });
+
+        //删除行
+    });
+
+    $('#get_table_data').click(function () {
+
+
+        var args = {};
+        $('#request_header tr').each(function (i) {                   // 遍历 tr
+            if (i == 0) return true;
+            var data = new Object();
+            $(this).find("td[name]").each(function () {
+                var name = $(this).attr("name");
+                data[name] = $(this).text();
+            });
+            args[i] = data;
+        });
+        send_data = JSON.stringify(args);
+        alert(send_data);
+    });
+
+    $('#sumbit').click(function () {
+
+        var if_id = $("#if_name").attr('name');
+        var if_name = $("#if_name").val();  //接口名称
+        var prj_id = $("#prj_id").val();    //所属项目
+        var url = $("#url").val();          //接口api
+        var method = $("input[name='method']:checked").val();   //请求方法
+        var data_type = $("#data_type").val();      //传输类型
+        var description = $("textarea[name='description']").val(); //接口描述
+
+        var request_header_data;
+        var request_body_data;
+        var response_header_data;
+        var response_body_data;
+
+        var args = [];
+        $('#request_header tr').each(function (i) {
+            if (i == 0) return true;
+            var data = new Object();
+            $(this).find("td[name]").each(function () {
+                var name = $(this).attr("name");
+                data[name] = $(this).text();
+            });
+            args.push(data);
+        });
+        request_header_data = JSON.stringify(args);
+
+        var args = [];
+        $('#request_body tr').each(function (i) {
+            if (i == 0) return true;
+            var data = new Object();
+            $(this).find("td[name]").each(function () {
+                var name = $(this).attr("name");
+                data[name] = $(this).text();
+            });
+            args.push(data);
+        });
+        request_body_data = JSON.stringify(args);
+
+        var args = [];
+        $('#response_header tr').each(function (i) {                   // 遍历 tr
+            if (i == 0) return true;
+            var data = new Object();
+            $(this).find("td[name]").each(function () {
+                var name = $(this).attr("name");
+                data[name] = $(this).text();
+            });
+            args.push(data);
+        });
+        response_header_data = JSON.stringify(args);
+
+        var args = [];
+        $('#response_body tr').each(function (i) {                   // 遍历 tr
+            if (i == 0) return true;
+            var data = new Object();
+            $(this).find("td[name]").each(function () {
+                var name = $(this).attr("name");
+                data[name] = $(this).text();
+            });
+            args.push(data);
+        });
+        response_body_data = JSON.stringify(args);
+
+        $.ajax({
+            url: "/apitest/update_interviews?if_obj_id="+if_id,
+            type: "post",
+            data: {
+                "if_name": if_name,
+                "prj_id": prj_id,
+                "url": url,
+                "method": method,
+                "data_type": data_type,
+                "description": description,
+                "request_header_data": request_header_data,
+                "request_body_data": request_body_data,
+                "response_header_data": response_header_data,
+                "response_body_data": response_body_data,
+            },
+            // dataType: "json",
+            success:function (result) {
+                if(result.code == 1){
+                    alert(result.data);
+                }else if (result.code == 2){
+                    alert(result.data);
+                    window.location.replace("/apitest/get_interviews/1");
+                }else{
+                    alert(result.data);
+                }
+                }
+        });
+
+    });
+
+</script>
+{% endblock %}

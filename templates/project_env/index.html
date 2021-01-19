@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+{% block crumbs %}
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/index">主页</a>
+                </li>
+                <li class="active">
+                    <a class="this-page">项目管理</a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <input type="text" id="sear_project_name" style="border:2px solid #337ab7;width:30%;height:30px;" name="project_name" placeholder="名称项目">
+                    <input type="button" id="sear"  class="btn btn-primary" name="search" value="搜索">
+                    <script type="text/javascript" src="{% static 'scripts/jquery-1.12.4.min.js' %}"></script>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#sear').click(function(){
+                                var project_name=$('#sear_project_name').val()
+                                if(project_name==""){
+                                    location.href='{% url 'project_env:get_Projects' 1 %}'
+                                }else{
+                                    location.href='{% url 'project_env:search_Projects' %}?project_name='+project_name+''
+                                }
+                            })
+                            })
+                    </script>
+                    <a href="{% url 'project_env:add_Projects' %}" style="position: absolute;right:30px;top:20px" class="btn btn-primary">添加项目</a>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>项目名称</th>
+                            <th>项目版本</th>
+                            <th>项目描述</th>
+                            <th>项目状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for prj in pro_list %}
+                            <tr>
+                                <td>{{ prj.prj_name }}</td>
+                                <td>{{ prj.version }}</td>
+                                <td>{{ prj.description }}</td>
+                                {% if prj.status == 1 %}
+                                    <td>有效</td>
+                                    {% elif prj.status == 0 %}
+                                    <td>无效</td>
+                                {% endif %}
+                                <td>
+                                    <a href="{% url 'project_env:update_Projects' %}?pro_id={{ prj.prj_id }}" class="layui-btn layui-btn-xs"
+                                       lay-event="edit">编辑</a>
+                                    <a href="{% url 'project_env:delete_Projects' %}?pro_id={{ prj.prj_id }}"
+                                       class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            <div class="panel-footer">
+            <nav aria-label="Page navigation">
+                    <ul class="pagination pagination-sm">
+                    {% if pages.has_previous %}
+                        <li><a href="{% url 'project_env:get_Projects' pages.previous_page_number %}" aria-label="Previous">
+                            <span aria-hidden="true">上一页</span></a></li>
+                {% else %}
+                <li class="disabled"><a aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+                    {% endif %}
+                    {% for num in page_nums %}
+                        {% if num == numbers %}
+                        <li class="active"><a href="">{{ num }}</a></li>
+                        {% else %}
+                        <li><a href="{% url 'project_env:get_Projects' num %}">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if pages.has_next  %}
+                    <li><a href="{% url 'project_env:get_Projects' pages.next_page_number %}" aria-label="Next">
+                        <span aria-hidden="true">下一页</span></a></li>
+                      {% else %}
+                      <li class="disabled"><a aria-label="Next"><span aria-hidden="true">下一页</span></a></li>
+                    {% endif %}
+                    </ul>
+                </nav>
+			</div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

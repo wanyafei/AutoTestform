@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+{% load static %}
+{% block crumbs %}
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="/index">主页</a>
+                </li>
+                <li class="active">
+                    <a class="this-page">接口测试</a>
+                </li>
+                <li class="active">
+                    <a class="this-page">用例管理</a>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <input type="text" id="sear_testcase_name" style="border:2px solid #337ab7;width:30%;height:30px;" name="testcase_name" placeholder="用例名称">
+                    <input type="button" id="sear" class="btn btn-primary" name="search" value="搜索">
+                    <script type="text/javascript" src="{% static 'scripts/jquery-1.12.4.min.js' %}"></script>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#sear').click(function(){
+                                var testcase_name=$('#sear_testcase_name').val()
+                                if(testcase_name==""){
+                                    location.href='{% url 'apitest:get_testcase' 1 %}'
+                                }else{
+                                    location.href='{% url 'apitest:search_testcase' %}?testcase_name='+testcase_name
+                                }
+                            })
+                            })
+                    </script>
+                    <a href="{% url 'apitest:add_testcase' %}" style="position: absolute;right:30px;top:20px" class="btn btn-primary">添加用例</a>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>用例名称</th>
+                            <th>所属项目</th>
+                            <th>用例描述</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for testcase in number_range %}
+                            <tr>
+                                <td>{{ testcase.case_id }}</td>
+                                <td>{{ testcase.case_name }}</td>
+                                <td prj_id={{ testcase.project.pk }}>{{ testcase.project }}</td>
+                                <td>{{ testcase.description }}</td>
+                                <td>
+                                    <button class="#runCaseForm btn btn-primary" onclick="debug_button(this);" data-toggle="modal" data-target="#runCaseForm">运行</button>
+                                    <a href="{% url 'apitest:update_testcase' %}?testcase_id={{ testcase.pk }}" class="layui-btn layui-btn-xs"
+                                       lay-event="edit">编辑</a>
+                                    <a href="{% url 'apitest:del_testcase' %}?testcase_id={{ testcase.pk }}"
+                                       class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                <div class="modal fade" id="runCaseForm" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                            <h4 class="modal-title">用例运行</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-horizontal" method="post" action="">
+                                <div class="form-group">
+                                    <input type="hidden" id="debug_case_id" name="case_id">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">请选择测试环境</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control m-b" id="debug_env_id" name="env_id">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label"> 接口返回内容</label>
+                                    <div class="col-sm-8"><textarea class="form-control" id="run_return_parameter"
+                                                                    name="run_return_parameter"
+                                                                    rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">测试结果</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="test_val">
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" id="cancel_run" class="btn btn-default" data-dismiss="modal">
+                                        取消
+                                    </button>
+                                    <button type="button" onclick="run_button()" class="btn btn-primary">调试
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <div class="panel-footer">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination pagination-sm">
+                    {% if page_num_obj.has_previous %}
+                        <li><a href="{% url 'apitest:get_testcase' page_num_obj.previous_page_number %}" aria-label="Previous">
+                            <span aria-hidden="true">上一页</span></a></li>
+                {% else %}
+                <li class="disabled"><a aria-label="Previous"><span aria-hidden="true">上一页</span></a></li>
+                    {% endif %}
+                    {% for num in page_range %}
+                        {% if num == page_active_num %}
+                        <li class="active"><a href="">{{ num }}</a></li>
+                        {% else %}
+                        <li><a href="{% url 'apitest:get_testcase' num %}">{{ num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page_num_obj.has_next  %}
+                    <li><a href="{% url 'apitest:get_testcase' page_num_obj.next_page_number %}" aria-label="Next">
+                        <span aria-hidden="true">下一页</span></a></li>
+                      {% else %}
+                      <li class="disabled"><a aria-label="Next"><span aria-hidden="true">下一页</span></a></li>
+                    {% endif %}
+                    </ul>
+                </nav>
+			</div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascript %}
+    <script>
+        //点击运行按钮获取项目对应的环境
+        function debug_button(obj){
+            var case_id=obj.parentNode.parentNode.children[0].innerText;
+            var prj_id=obj.parentNode.parentNode.children[2].getAttribute("prj_id");
+            $("#debug_case_id").val(case_id);
+            $("#cancel_run").html("取消");
+            $("#cancel_run").attr("class", "btn btn-default");
+            $("#run_return_parameter").val('');
+            $("#test_val").val('');
+            $('#debug_env_id').empty();
+            $.ajax({
+                type:'get',
+                url:'/apitest/find_prj_if',
+                data:{
+                    "prj_id":prj_id,
+                    "type":"get_env_by_prj_id"
+                },
+                success:function (data){
+                    $(data).each(function (i,item){
+                        $('#debug_env_id').append("<option value=" + item.env_id +">"+ item.env_name +"</option>")
+                    })
+                },
+                error:function () {
+                    alert('获取测试环境失败!!!')
+                }
+            });
+        };
+        //点击【调试】按钮触发的事件
+        function run_button(){
+            $.ajax({
+                type:'post',
+                url:'/apitest/case_run',
+                data:{
+                    "case_id":$("#debug_case_id").val(),
+                    "env_id":$("#debug_env_id").val()
+                },
+                success:function (data){
+                $("#run_return_parameter").val(JSON.stringify(data));
+                if (data.result=="pass"){
+                    $("#test_val").val("通过");
+                }else{
+                    $("#test_val").val("失败");
+                }
+                $("#cancel_run").html("完成");
+                $("#cancel_run").attr("class","btn btn-primary");
+                },
+                error:function () {
+                $("#run_return_parameter").val("调取接口失败！！！");
+                $("#test_val").val("失败")
+                $("#cancel_run").html("完成");
+                $("#cancel_run").attr("class","btn btn-danger");
+                }
+
+            });
+        }
+    </script>
+{% endblock %}

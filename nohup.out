@@ -1,0 +1,392 @@
+Watching for file changes with StatReloader
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/AutoTestPlatform/views.py", line 88, in login
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: login.html
+[19/Jan/2021 11:19:04] "GET /login/ HTTP/1.1" 500 71899
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/lib/middleware.py", line 17, in process_request
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1267, in build_filter
+    value = self.resolve_lookup_value(value, can_reuse, allow_joins)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1062, in resolve_lookup_value
+    if hasattr(value, 'resolve_expression'):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 240, in inner
+    self._setup()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 376, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 174, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 58, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 65, in __getitem__
+    return self._session[key]
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+[19/Jan/2021 11:19:05] "GET /favicon.ico HTTP/1.1" 500 211791
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/lib/middleware.py", line 17, in process_request
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1267, in build_filter
+    value = self.resolve_lookup_value(value, can_reuse, allow_joins)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1062, in resolve_lookup_value
+    if hasattr(value, 'resolve_expression'):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 240, in inner
+    self._setup()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 376, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 174, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 58, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 65, in __getitem__
+    return self._session[key]
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+[19/Jan/2021 11:19:26] "GET / HTTP/1.1" 500 211832
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/lib/middleware.py", line 17, in process_request
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1267, in build_filter
+    value = self.resolve_lookup_value(value, can_reuse, allow_joins)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1062, in resolve_lookup_value
+    if hasattr(value, 'resolve_expression'):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 240, in inner
+    self._setup()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 376, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 174, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 58, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 65, in __getitem__
+    return self._session[key]
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+[19/Jan/2021 11:19:27] "GET /favicon.ico HTTP/1.1" 500 211787
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/AutoTestPlatform/views.py", line 88, in login
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: login.html
+[19/Jan/2021 11:19:55] "GET /login/ HTTP/1.1" 500 71899
+Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/lib/middleware.py", line 17, in process_request
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1267, in build_filter
+    value = self.resolve_lookup_value(value, can_reuse, allow_joins)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1062, in resolve_lookup_value
+    if hasattr(value, 'resolve_expression'):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 240, in inner
+    self._setup()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 376, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 174, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 58, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 65, in __getitem__
+    return self._session[key]
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+[19/Jan/2021 11:19:56] "GET /favicon.ico HTTP/1.1" 500 211791
+[19/Jan/2021 11:21:12] "GET /login/ HTTP/1.1" 200 1620
+[19/Jan/2021 11:21:12] "GET /login/assets/img/3.jpg HTTP/1.1" 200 1620
+[19/Jan/2021 11:21:12] "GET /login/assets/img/1.jpg HTTP/1.1" 200 1620
+[19/Jan/2021 11:21:12] "GET /login/assets/img/2.jpg HTTP/1.1" 200 1620
+[19/Jan/2021 11:21:12] "GET /static/login/img/progress.gif HTTP/1.1" 404 1692
+[19/Jan/2021 11:21:13] "GET /favicon.ico HTTP/1.1" 200 33
+[19/Jan/2021 11:21:15] "POST /login/ HTTP/1.1" 302 0
+/Users/kgene/Documents/python/AutoTestPlatform/AutoTestPlatform/views.py:50: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'taste_user.models.Taste'> QuerySet.
+  page_obj=Paginator(task_obj,4)    #创建一个每页2条数据的分页对象
+[19/Jan/2021 11:21:15] "GET /index/ HTTP/1.1" 200 13007
+[19/Jan/2021 11:21:15] "GET /static/echarts/admin.css HTTP/1.1" 304 0
+[19/Jan/2021 11:21:15] "GET /static/echarts/amazeui.min.js HTTP/1.1" 304 0
+[19/Jan/2021 11:21:15] "GET /static/echarts/bootstrap.min.css HTTP/1.1" 304 0

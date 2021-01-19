@@ -1,0 +1,657 @@
+2021-01-18 10:27:14,291 - INFO - Watching for file changes with StatReloader
+2021-01-18 10:27:35,123 - INFO - 登陆成功当前登陆用户为：admins
+2021-01-18 10:27:55,330 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"59","if_name":"资本市场企业数量总缆","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"gradeCount","comparator":"eq","expect":">0"}]}]
+2021-01-18 10:27:55,332 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,332 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,382 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,383 - INFO - 用例运行后的运行结果是{'case_id': '16', 'case_name': '资本市场企业数量总缆', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,387 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"60","if_name":"模型效果数","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"actualHit","comparator":"eq","expect":">0"}]}]
+2021-01-18 10:27:55,388 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,388 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,412 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,412 - INFO - 用例运行后的运行结果是{'case_id': '17', 'case_name': '模型效果数', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,415 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"62","if_name":"首页-企业风险分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,416 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,416 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,438 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,438 - INFO - 用例运行后的运行结果是{'case_id': '18', 'case_name': '企业风险分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,441 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"61","if_name":"首页-预警、观察、良好数","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"detialCount","comparator":"eq","expect":">0"}]}]
+2021-01-18 10:27:55,442 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,442 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,463 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,463 - INFO - 用例运行后的运行结果是{'case_id': '19', 'case_name': '预警、观察、良好数', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,466 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"63","if_name":"首页-行业分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,467 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,468 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,489 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,489 - INFO - 用例运行后的运行结果是{'case_id': '20', 'case_name': '行业分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,499 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"64","if_name":"首页-地区分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,501 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,501 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,523 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,524 - INFO - 用例运行后的运行结果是{'case_id': '21', 'case_name': '地区分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,527 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"65","if_name":"首页-近6月预警企业数量变化趋势","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"month":6,"riskLevel":2},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,528 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,528 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,553 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,553 - INFO - 用例运行后的运行结果是{'case_id': '22', 'case_name': '近6月预警企业数量变化趋势', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,555 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"66","if_name":"首页-不同行业预警企业数同比增长率排名TOP10","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"month":3,"riskLevel":2},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,556 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,556 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,576 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,577 - INFO - 用例运行后的运行结果是{'case_id': '23', 'case_name': '不同行业预警企业数同比增长率排名TOP10', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,579 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"67","if_name":"首页-不同企业性质预警企业数同比增长率排名TOP10","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"month":3,"riskLevel":2},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,580 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,580 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,599 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,599 - INFO - 用例运行后的运行结果是{'case_id': '24', 'case_name': '不同企业性质预警企业数同比增长率排名TOP10', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,602 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"68","if_name":"首页-不同地区(省级)预警企业数同比增长率排名TOP10","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"month":3,"riskLevel":2},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,603 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,603 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,621 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,621 - INFO - 用例运行后的运行结果是{'case_id': '25', 'case_name': '不同地区(省级)预警企业数同比增长率排名TOP10', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,626 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"69","if_name":"首页-企业性质走势图","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entNatureCode":1,"month":12},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,628 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,628 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,646 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,646 - INFO - 用例运行后的运行结果是{'case_id': '26', 'case_name': '企业性质走势图', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,650 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"70","if_name":"首页-行业走势图","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entIndustryCode":110000,"month":12},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,651 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,652 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,669 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,670 - INFO - 用例运行后的运行结果是{'case_id': '27', 'case_name': '行业走势图', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,675 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"71","if_name":"首页-地区走势图","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entAreaCode":110000,"month":12},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,676 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,676 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,693 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,694 - INFO - 用例运行后的运行结果是{'case_id': '28', 'case_name': '地区走势图', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,697 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"72","if_name":"首页-A股上市企业-企业体检分分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"custormerGroupCode":1},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,698 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,698 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,717 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,718 - INFO - 用例运行后的运行结果是{'case_id': '29', 'case_name': 'A股上市企业-企业体检分分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,721 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"73","if_name":"首页-A股上市企业-企业性质分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"custormerGroupCode":1},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,722 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,722 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,744 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,744 - INFO - 用例运行后的运行结果是{'case_id': '30', 'case_name': 'A股上市企业-企业性质分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,747 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"74","if_name":"首页-A股上市企业-行业分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"custormerGroupCode":1},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,748 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,748 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,768 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,769 - INFO - 用例运行后的运行结果是{'case_id': '31', 'case_name': 'A股上市企业-行业分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,772 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"75","if_name":"首页-A股上市企业-地区分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"custormerGroupCode":1},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,773 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,774 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,792 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,792 - INFO - 用例运行后的运行结果是{'case_id': '32', 'case_name': 'A股上市企业-地区分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,795 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"76","if_name":"首页-A股上市企业-右侧柱状图","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"custormerGroupCode":1,"entAreaCode":"440000","riskLevels":[0,1,2]},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,796 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,797 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,815 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,815 - INFO - 用例运行后的运行结果是{'case_id': '33', 'case_name': 'A股上市企业-右侧柱状图', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,820 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"77","if_name":"首页-A股上市企业-列表","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"custormerGroupCode":1,"entids":["6F274E075FDD7C57E0539601A8C0ACD65"],"page":1,"size":5,"sort":"asc"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,821 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,821 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,839 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,840 - INFO - 用例运行后的运行结果是{'case_id': '34', 'case_name': 'A股上市企业-列表', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,845 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"78","if_name":"模型效果概览","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"actualHit","comparator":"eq","expect":">0"}]}]
+2021-01-18 10:27:55,846 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,846 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,865 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,865 - INFO - 用例运行后的运行结果是{'case_id': '35', 'case_name': '模型效果概览', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,868 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"79","if_name":"模型效果-预警提前量","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,870 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,870 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,888 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,888 - INFO - 用例运行后的运行结果是{'case_id': '36', 'case_name': '模型效果-预警提前量', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,892 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"80","if_name":"模型效果-ROC","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,893 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,893 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,913 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,913 - INFO - 用例运行后的运行结果是{'case_id': '37', 'case_name': '模型效果-ROC', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,916 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"81","if_name":"实际违约结果与模型预测结果对比分析","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"","pageNum":1,"pageSize":5},"extract":{},"validators":[{"check":"totalCount","comparator":"eq","expect":">0"}]}]
+2021-01-18 10:27:55,917 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,917 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,941 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,941 - INFO - 用例运行后的运行结果是{'case_id': '38', 'case_name': '实际违约结果与模型预测结果对比分析', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,944 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"82","if_name":"我的收藏-评分看板","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"page":1,"size":5},"extract":{},"validators":[{"check":"totalCount","comparator":"eq","expect":">0"}]}]
+2021-01-18 10:27:55,945 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,945 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,965 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,965 - INFO - 用例运行后的运行结果是{'case_id': '39', 'case_name': '评分看板', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,968 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"83","if_name":"我的收藏-企业体检分分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,969 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,969 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:55,988 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:55,988 - INFO - 用例运行后的运行结果是{'case_id': '40', 'case_name': '企业体检分分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:55,992 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"84","if_name":"我的收藏-企业风险分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:55,994 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:55,994 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,013 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,014 - INFO - 用例运行后的运行结果是{'case_id': '41', 'case_name': '我的收藏-企业风险分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,016 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"85","if_name":"我的收藏-概览","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"detialCount","comparator":"eq","expect":">0"}]}]
+2021-01-18 10:27:56,017 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,017 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,036 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,036 - INFO - 用例运行后的运行结果是{'case_id': '42', 'case_name': '我的收藏-概览', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,040 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"86","if_name":"我的收藏-行业分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,041 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,041 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,061 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,061 - INFO - 用例运行后的运行结果是{'case_id': '43', 'case_name': '我的收藏-行业分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,064 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"87","if_name":"我的收藏-地区分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,065 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,066 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,087 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,087 - INFO - 用例运行后的运行结果是{'case_id': '44', 'case_name': '我的收藏-地区分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,090 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"88","if_name":"我的收藏-所有的区域","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"parentid":""},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,091 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,091 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,110 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,111 - INFO - 用例运行后的运行结果是{'case_id': '45', 'case_name': '我的收藏-所有的区域', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,113 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"89","if_name":"我的收藏-所有的行业","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"induCode":""},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,114 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,114 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,136 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,137 - INFO - 用例运行后的运行结果是{'case_id': '46', 'case_name': '我的收藏-所有的行业', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,139 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"90","if_name":"我的收藏-地域分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entAreaCode":"620000","riskLevels":[0,1,2]},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,140 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,140 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,159 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,160 - INFO - 用例运行后的运行结果是{'case_id': '47', 'case_name': '我的收藏-地域分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,163 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"91","if_name":"我的收藏-评分走势","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274D54E6BD7C57E0539601A8C0ACD65","condition":1},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,165 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,165 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,182 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,183 - INFO - 用例运行后的运行结果是{'case_id': '48', 'case_name': '我的收藏-评分走势', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,185 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"92","if_name":"归因-概览信息","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,186 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,186 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,205 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,206 - INFO - 用例运行后的运行结果是{'case_id': '49', 'case_name': '概览信息', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,208 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"93","if_name":"归因-资本市场评分分布","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,210 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,210 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,228 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,228 - INFO - 用例运行后的运行结果是{'case_id': '50', 'case_name': '资本市场评分分布', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,231 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"94","if_name":"归因-归因总揽","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,232 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,232 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,251 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,251 - INFO - 用例运行后的运行结果是{'case_id': '51', 'case_name': '归因总揽', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,254 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"95","if_name":"归因-评分走势","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","condition":1},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,256 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,256 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,273 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,273 - INFO - 用例运行后的运行结果是{'case_id': '52', 'case_name': '评分走势', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,276 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"96","if_name":"s环境-行业表现分项指标值","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,277 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,277 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,296 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,297 - INFO - 用例运行后的运行结果是{'case_id': '53', 'case_name': '行业表现分项指标值', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,300 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"97","if_name":"s环境-行业特征分项指标值","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,302 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,302 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,323 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,323 - INFO - 用例运行后的运行结果是{'case_id': '54', 'case_name': '行业特征分项指标值', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,326 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"98","if_name":"o经营-评级等标志类指标","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","group1":2,"group2":4},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,327 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,327 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,348 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,348 - INFO - 用例运行后的运行结果是{'case_id': '55', 'case_name': '评级等标志类指标', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,351 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"99","if_name":"o经营-同市场对比类指标","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","group1":2,"group2":3,"groupCode":3},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,353 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,353 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,372 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,372 - INFO - 用例运行后的运行结果是{'case_id': '56', 'case_name': '同市场对比类指标', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,375 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"100","if_name":"c信用-同市场对比类指标","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","group1":3,"group2":3,"groupCode":3},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,376 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,376 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,396 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,397 - INFO - 用例运行后的运行结果是{'case_id': '57', 'case_name': 'c信用-同市场对比类指标', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,399 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"101","if_name":"R关联-同行业对比类指标","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","group1":3,"group2":4,"groupCode":3},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,402 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,402 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,422 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,422 - INFO - 用例运行后的运行结果是{'case_id': '58', 'case_name': 'R关联-同行业对比类指标', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,426 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"102","if_name":"R关联-评级等标志类指标","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","group1":4,"group2":4},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,427 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,427 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,446 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,446 - INFO - 用例运行后的运行结果是{'case_id': '59', 'case_name': 'R关联评级等标志类指标', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,450 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"103","if_name":"x舆情-预测结果","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65"},"extract":{},"validators":[{"check":"eventseriespred","comparator":"eq","expect":">0"}]}]
+2021-01-18 10:27:56,452 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,452 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,471 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,471 - INFO - 用例运行后的运行结果是{'case_id': '60', 'case_name': 'x舆情-预测结果', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,474 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"104","if_name":"x舆情-舆情事件序列","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"customize":"2","entid":"6F274EB1BFFB7C57E0539601A8C0ACD65"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,475 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,475 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,495 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,495 - INFO - 用例运行后的运行结果是{'case_id': '61', 'case_name': 'x舆情-舆情事件序列', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,499 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"105","if_name":"x舆情-列表","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"endDate":"2020-12-30","entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","page":1,"size":10,"startDate":"2020-09-11","warnSignalLevels":"1,2,3"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,500 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,500 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,520 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,520 - INFO - 用例运行后的运行结果是{'case_id': '62', 'case_name': 'x舆情-列表', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,523 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"106","if_name":"a调整-列表","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,524 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,524 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,543 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,544 - INFO - 用例运行后的运行结果是{'case_id': '63', 'case_name': 'a调整-列表', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,547 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"107","if_name":"a调整-现金偿付能力分析","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","group1":6,"group2":5,"groupCode":3},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,548 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,548 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,567 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,568 - INFO - 用例运行后的运行结果是{'case_id': '64', 'case_name': 'a调整-现金偿付能力分析', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,570 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"107","if_name":"a调整-现金偿付能力分析","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","group1":6,"group2":5,"groupCode":3},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,571 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,571 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,590 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,590 - INFO - 用例运行后的运行结果是{'case_id': '65', 'case_name': '现金偿付能力分析', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,595 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"108","if_name":"a调整-现金偿付能力分析","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","entNatureCode":"3"},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,596 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,596 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,617 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,618 - INFO - 用例运行后的运行结果是{'case_id': '66', 'case_name': '不同参数-现金偿付能力分析', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:27:56,621 - INFO - 用例对应的content内容是：[{"if_id":"1","if_name":"login","header":{"Content-Type":"application/json;charset=UTF-8"},"body":{"account":"wanyafei01","password":"9cbf8a4dcb8e30682b927f352d6559a0"},"extract":{"token":""},"validators":[{"check":"message","comparator":"eq","expect":"success"}]},{"if_id":"109","if_name":"a调整-现金偿付能力分析","header":{"Content-Type":"application/json;charset=UTF-8","Token":"$token"},"body":{"entid":"6F274EB1BFFB7C57E0539601A8C0ACD65","areaCode":"620000","custormerGroupCode":3},"extract":{},"validators":[{"check":"message","comparator":"eq","expect":"success"}]}]
+2021-01-18 10:27:56,622 - INFO - 用例包含的接口是：login
+2021-01-18 10:27:56,623 - INFO - 接口的参数为：{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json'}
+2021-01-18 10:27:56,642 - INFO - 接口运行返回值是：<Response [200]>
+2021-01-18 10:27:56,642 - INFO - 用例运行后的运行结果是{'case_id': '67', 'case_name': 'a调整-现金偿付能力分析3', 'result': 'fail', 'step_list': [{'url': 'http://grade.knowlegene.com/api/auth/doLogin', 'header': {'Content-Type': 'application/json;charset=UTF-8'}, 'body': {'account': 'wanyafei01', 'password': '9cbf8a4dcb8e30682b927f352d6559a0'}, 'method': 'post', 'data_type': 'json', 'res_status_code': 200, 'res_content': '{"code":404,"data":null,"message":"用户未找到"}', 'result': 'fail', 'msg': '测试失败:【字段：message预期结果是:success,实际结果是:用户未找到】'}]}
+2021-01-18 10:44:28,318 - INFO - Watching for file changes with StatReloader
+2021-01-18 10:44:32,022 - INFO - 登陆成功当前登陆用户为：admins
+2021-01-18 10:49:14,601 - INFO - 查询项目列表页数为：1
+2021-01-18 10:49:14,604 - INFO - 获取项目列表视图的上下文content:{'pages': <Page 1 of 1>, 'page_nums': range(1, 2), 'pro_list': <QuerySet [<Project: 智慧信贷>, <Project: sso>, <Project: 智慧评分>]>, 'numbers': 1, 'user_obj': <SimpleLazyObject: <User: admins>>}
+2021-01-18 10:53:59,521 - INFO - /Users/kgene/Documents/python/AutoTestPlatform/lib/pageinfo.py changed, reloading.
+2021-01-18 10:54:00,611 - INFO - Watching for file changes with StatReloader
+2021-01-18 10:58:15,130 - INFO - 查询项目列表页数为：1
+2021-01-18 10:58:15,133 - INFO - 获取项目列表视图的上下文content:{'pages': <Page 1 of 1>, 'page_nums': range(1, 2), 'pro_list': <QuerySet [<Project: 智慧信贷>, <Project: sso>, <Project: 智慧评分>]>, 'numbers': 1, 'user_obj': <SimpleLazyObject: <User: admins>>}
+2021-01-18 10:58:17,026 - INFO - 获取环境列表视图返回值上下文:{'pages': <Page 1 of 2>, 'page_nums': range(1, 3), 'env_list': <QuerySet [<Environment: 开发环境>, <Environment: 评分测试环境>]>, 'numbers': 1, 'user_obj': <SimpleLazyObject: <User: admins>>}
+2021-01-18 10:58:19,107 - INFO - 获取环境列表视图返回值上下文:{'pages': <Page 2 of 2>, 'page_nums': range(1, 3), 'env_list': <QuerySet [<Environment: 评分系统生产环境>]>, 'numbers': 2, 'user_obj': <SimpleLazyObject: <User: admins>>}
+2021-01-18 11:16:49,797 - INFO - 获取环境列表视图返回值上下文:{'pages': <Page 2 of 2>, 'page_nums': range(1, 3), 'env_list': <QuerySet [<Environment: 评分系统生产环境>]>, 'numbers': 2, 'user_obj': <SimpleLazyObject: <User: admins>>}
+2021-01-18 11:21:32,101 - INFO - /Users/kgene/Documents/python/AutoTestPlatform/lib/pageinfo.py changed, reloading.
+2021-01-18 11:21:33,041 - INFO - Watching for file changes with StatReloader
+2021-01-18 18:28:32,470 - INFO - Watching for file changes with StatReloader
+2021-01-18 18:29:55,315 - INFO - Watching for file changes with StatReloader
+2021-01-18 18:30:51,247 - INFO - Watching for file changes with StatReloader
+2021-01-18 18:32:06,589 - INFO - 登陆成功当前登陆用户为：admins
+2021-01-18 18:32:23,767 - INFO - 查询项目列表页数为：1
+2021-01-18 18:32:23,772 - INFO - 获取项目列表视图的上下文content:{'pages': <Page 1 of 1>, 'page_nums': range(1, 2), 'pro_list': <QuerySet [<Project: 智慧信贷>, <Project: sso>, <Project: 智慧评分>]>, 'numbers': 1, 'user_obj': <SimpleLazyObject: <User: admins>>}
+2021-01-18 18:32:26,765 - INFO - 获取环境列表视图返回值上下文:{'pages': <Page 1 of 2>, 'page_nums': range(1, 3), 'env_list': <QuerySet [<Environment: 开发环境>, <Environment: 评分测试环境>]>, 'numbers': 1, 'user_obj': <SimpleLazyObject: <User: admins>>}
+2021-01-18 18:36:27,422 - INFO - Watching for file changes with StatReloader
+2021-01-18 18:37:03,897 - INFO - 登陆成功当前登陆用户为：admins
+2021-01-19 11:19:04,677 - ERROR - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/AutoTestPlatform/views.py", line 88, in login
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: login.html
+2021-01-19 11:19:05,673 - ERROR - Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/lib/middleware.py", line 17, in process_request
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1267, in build_filter
+    value = self.resolve_lookup_value(value, can_reuse, allow_joins)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1062, in resolve_lookup_value
+    if hasattr(value, 'resolve_expression'):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 240, in inner
+    self._setup()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 376, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 174, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 58, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 65, in __getitem__
+    return self._session[key]
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+2021-01-19 11:19:26,655 - ERROR - Internal Server Error: /
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/lib/middleware.py", line 17, in process_request
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1267, in build_filter
+    value = self.resolve_lookup_value(value, can_reuse, allow_joins)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1062, in resolve_lookup_value
+    if hasattr(value, 'resolve_expression'):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 240, in inner
+    self._setup()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 376, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 174, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 58, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 65, in __getitem__
+    return self._session[key]
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+2021-01-19 11:19:27,043 - ERROR - Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/lib/middleware.py", line 17, in process_request
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1267, in build_filter
+    value = self.resolve_lookup_value(value, can_reuse, allow_joins)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1062, in resolve_lookup_value
+    if hasattr(value, 'resolve_expression'):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 240, in inner
+    self._setup()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 376, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 174, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 58, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 65, in __getitem__
+    return self._session[key]
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+2021-01-19 11:19:55,326 - ERROR - Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 179, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/AutoTestPlatform/views.py", line 88, in login
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: login.html
+2021-01-19 11:19:56,189 - ERROR - Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/deprecation.py", line 113, in __call__
+    response = self.process_request(request)
+  File "/Users/kgene/Documents/python/AutoTestPlatform/lib/middleware.py", line 17, in process_request
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1267, in build_filter
+    value = self.resolve_lookup_value(value, can_reuse, allow_joins)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1062, in resolve_lookup_value
+    if hasattr(value, 'resolve_expression'):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 240, in inner
+    self._setup()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/utils/functional.py", line 376, in _setup
+    self._wrapped = self._setupfunc()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 23, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 174, in get_user
+    user_id = _get_user_session_key(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 58, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 65, in __getitem__
+    return self._session[key]
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+2021-01-19 11:21:15,102 - INFO - 登陆成功当前登陆用户为：admins
